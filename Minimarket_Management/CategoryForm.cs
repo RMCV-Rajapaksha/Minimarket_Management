@@ -18,12 +18,13 @@ namespace Minimarket_Management
         public CategoryForm()
         {
             InitializeComponent();
+            getTable();
         }
 
         private void getTable()
         {
-            string selectQuerry = "SELECT * FROM Categoty";
-            SqlCommand command = new SqlCommand(selectQuerry, bdCon.GetCon());
+            string selectQuery = "SELECT * FROM Category"; 
+            SqlCommand command = new SqlCommand(selectQuery, bdCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -55,5 +56,25 @@ namespace Minimarket_Management
         {
             getTable();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string updateQuery = "UPDATE Category SET CatName='" + textBox_Name.Text + "', CatDes='" + textBox_Description.Text + "' WHERE CatId=" + textBox_Id.Text;
+                SqlCommand cmd = new SqlCommand(updateQuery, bdCon.GetCon());
+                bdCon.openCon();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Category Update Successfully");
+                bdCon.closeCon();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+
+
     }
 }

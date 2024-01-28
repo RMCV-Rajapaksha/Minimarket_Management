@@ -41,5 +41,12 @@ namespace Minimarket_Management
         {
           
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CategoryForm Myroom = new CategoryForm();
+            Myroom.Show();
+            this.Hide();
+        }
     }
 }
