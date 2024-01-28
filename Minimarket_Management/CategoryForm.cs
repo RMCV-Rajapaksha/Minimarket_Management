@@ -39,12 +39,19 @@ namespace Minimarket_Management
         {
             try
             {
-                string insertQuery = "INSERT INTO Category VALUES(" + textBox_Id.Text + ",'" + textBox_Name.Text + "','" + textBox_Description.Text + "')";
-                SqlCommand cmd = new SqlCommand(insertQuery, bdCon.GetCon());
-                bdCon.openCon();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Category Added Successfully");
-                bdCon.closeCon();
+                
+
+                
+                {
+                    string insertQuery = "INSERT INTO Category VALUES(" + textBox_Id.Text + ",'" + textBox_Name.Text + "','" + textBox_Description.Text + "')";
+                    SqlCommand cmd = new SqlCommand(insertQuery, bdCon.GetCon());
+                    bdCon.openCon();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Category Added Successfully");
+                    bdCon.closeCon();
+                    getTable();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -61,20 +68,51 @@ namespace Minimarket_Management
         {
             try
             {
-                string updateQuery = "UPDATE Category SET CatName='" + textBox_Name.Text + "', CatDes='" + textBox_Description.Text + "' WHERE CatId=" + textBox_Id.Text;
-                SqlCommand cmd = new SqlCommand(updateQuery, bdCon.GetCon());
-                bdCon.openCon();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Category Update Successfully");
-                bdCon.closeCon();
+                if (textBox_Id.Text == "")
+                {
+                    MessageBox.Show("Missing Information");
+                }
+                else
+                {
+                    string updateQuery = "UPDATE Category SET CatName='" + textBox_Name.Text + "', CatDes='" + textBox_Description.Text + "' WHERE CatId=" + textBox_Id.Text;
+                    SqlCommand cmd = new SqlCommand(updateQuery, bdCon.GetCon());
+                    bdCon.openCon();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Category Update Successfully");
+                    bdCon.closeCon();
+                    getTable();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string deleteQuery = "DELETE FROM Category  WHERE CatId=" + textBox_Id.Text + "";
+                SqlCommand cmd = new SqlCommand(deleteQuery, bdCon.GetCon());
+                bdCon.openCon();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Category Deleted Successfully");
+                bdCon.closeCon();
+                getTable();
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ProductForm product = new ProductForm();
+            product.Show();
+            this.Hide();
+        }
     }
 }

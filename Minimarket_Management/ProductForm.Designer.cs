@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_product = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox_Categories = new System.Windows.Forms.ComboBox();
+            this.comboBox_Search = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,15 +51,15 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataGridView_product);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.comboBox_Categories);
+            this.panel1.Controls.Add(this.comboBox_Search);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -78,17 +78,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(919, 603);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dataGridView1
+            // dataGridView_product
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(420, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(486, 454);
-            this.dataGridView1.TabIndex = 19;
+            this.dataGridView_product.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView_product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_product.Location = new System.Drawing.Point(420, 132);
+            this.dataGridView_product.Name = "dataGridView_product";
+            this.dataGridView_product.RowHeadersWidth = 62;
+            this.dataGridView_product.RowTemplate.Height = 28;
+            this.dataGridView_product.Size = new System.Drawing.Size(486, 454);
+            this.dataGridView_product.TabIndex = 19;
             // 
             // button4
             // 
@@ -101,18 +102,19 @@
             this.button4.Text = "Refresh";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // comboBox_Categories
+            // comboBox_Search
             // 
-            this.comboBox_Categories.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.comboBox_Categories.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.comboBox_Categories.FormattingEnabled = true;
-            this.comboBox_Categories.Items.AddRange(new object[] {
+            this.comboBox_Search.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Search.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.comboBox_Search.FormattingEnabled = true;
+            this.comboBox_Search.Items.AddRange(new object[] {
             "ADMIN",
             "SELLER"});
-            this.comboBox_Categories.Location = new System.Drawing.Point(516, 66);
-            this.comboBox_Categories.Name = "comboBox_Categories";
-            this.comboBox_Categories.Size = new System.Drawing.Size(199, 35);
-            this.comboBox_Categories.TabIndex = 17;
+            this.comboBox_Search.Location = new System.Drawing.Point(516, 66);
+            this.comboBox_Search.Name = "comboBox_Search";
+            this.comboBox_Search.Size = new System.Drawing.Size(199, 29);
+            this.comboBox_Search.TabIndex = 17;
+            this.comboBox_Search.Text = "Select Category";
             // 
             // label6
             // 
@@ -157,10 +159,11 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox_Category
             // 
-            this.comboBox_Category.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.comboBox_Category.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Category.ForeColor = System.Drawing.SystemColors.MenuText;
             this.comboBox_Category.FormattingEnabled = true;
             this.comboBox_Category.Items.AddRange(new object[] {
@@ -168,8 +171,10 @@
             "SELLER"});
             this.comboBox_Category.Location = new System.Drawing.Point(177, 246);
             this.comboBox_Category.Name = "comboBox_Category";
-            this.comboBox_Category.Size = new System.Drawing.Size(199, 35);
+            this.comboBox_Category.Size = new System.Drawing.Size(199, 29);
             this.comboBox_Category.TabIndex = 12;
+            this.comboBox_Category.Text = "Select Category";
+            this.comboBox_Category.SelectedIndexChanged += new System.EventHandler(this.comboBox_Category_SelectedIndexChanged);
             // 
             // textBox_Name
             // 
@@ -312,9 +317,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,12 +342,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox_Categories;
+        private System.Windows.Forms.ComboBox comboBox_Search;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_product;
         private System.Windows.Forms.Button button8;
     }
 }
