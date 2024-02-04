@@ -90,7 +90,7 @@ namespace Minimarket_Management
                     SqlCommand cmd = new SqlCommand(insertQuery, bdCon.GetCon());
                     bdCon.openCon();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Category Added Successfully");
+                    MessageBox.Show("product Added Successfully");
                     bdCon.closeCon();
                     getTable();
                     clean();
@@ -103,6 +103,82 @@ namespace Minimarket_Management
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_Id.Text == "" || textBox_Name.Text == "" || textBox_Price.Text == "" || textBox_Quantity.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    string updateQuery = "UPDATE Product SET ProdName='" + textBox_Name.Text + "',ProdPrice='" + textBox_Price.Text + "', ProdQty='" + textBox_Quantity.Text + "', ProdCat='" + comboBox_Category.Text + "' WHERE ProdId=" + textBox_Id + " ";
+                    SqlCommand cmd = new SqlCommand(updateQuery, bdCon.GetCon());
+                    bdCon.openCon();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("product Update Successfully");
+                    bdCon.closeCon();
+                    getTable();
+                    clean();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (textBox_Id.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                { 
+                string deleteQuery = "DELETE FROM Product WHERE ProdId='" + textBox_Id.Text + "'";
+                SqlCommand cmd = new SqlCommand(deleteQuery, bdCon.GetCon());
+                bdCon.openCon();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("product Deleted Successfully", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bdCon.closeCon();
+                getTable();
+                clean();
+            }
+            }
+            catch
+            (Exception ex)
+            { MessageBox.Show(ex.Message); }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            getTable();
+        }
+
+        private void comboBox_Search_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM Product WHERE ProdCat='"+comboBox_Search.SelectedValue.ToString()+"'";
+            SqlCommand command = new SqlCommand(selectQuery, bdCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView_product.DataSource = dt;
+        }
+
+        private void Logout_button_Click(object sender, EventArgs e)
+        {
+            Login  login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
