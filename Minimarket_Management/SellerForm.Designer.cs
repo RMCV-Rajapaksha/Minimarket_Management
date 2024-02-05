@@ -38,8 +38,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_Name = new System.Windows.Forms.TextBox();
-            this.textBox_Price = new System.Windows.Forms.TextBox();
-            this.textBox_Quantity = new System.Windows.Forms.TextBox();
+            this.textBox_age = new System.Windows.Forms.TextBox();
+            this.textBox_phone = new System.Windows.Forms.TextBox();
             this.textBox_Id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button_product = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_pass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).BeginInit();
             this.panel1.SuspendLayout();
@@ -145,6 +145,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -156,6 +157,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox_Name
             // 
@@ -164,19 +166,19 @@
             this.textBox_Name.Size = new System.Drawing.Size(199, 26);
             this.textBox_Name.TabIndex = 11;
             // 
-            // textBox_Price
+            // textBox_age
             // 
-            this.textBox_Price.Location = new System.Drawing.Point(177, 157);
-            this.textBox_Price.Name = "textBox_Price";
-            this.textBox_Price.Size = new System.Drawing.Size(199, 26);
-            this.textBox_Price.TabIndex = 10;
+            this.textBox_age.Location = new System.Drawing.Point(177, 157);
+            this.textBox_age.Name = "textBox_age";
+            this.textBox_age.Size = new System.Drawing.Size(199, 26);
+            this.textBox_age.TabIndex = 10;
             // 
-            // textBox_Quantity
+            // textBox_phone
             // 
-            this.textBox_Quantity.Location = new System.Drawing.Point(177, 201);
-            this.textBox_Quantity.Name = "textBox_Quantity";
-            this.textBox_Quantity.Size = new System.Drawing.Size(199, 26);
-            this.textBox_Quantity.TabIndex = 9;
+            this.textBox_phone.Location = new System.Drawing.Point(177, 201);
+            this.textBox_phone.Name = "textBox_phone";
+            this.textBox_phone.Size = new System.Drawing.Size(199, 26);
+            this.textBox_phone.TabIndex = 9;
             // 
             // textBox_Id
             // 
@@ -255,7 +257,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBox_pass);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dataGridView_product);
             this.panel1.Controls.Add(this.button4);
@@ -265,8 +267,8 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox_Name);
-            this.panel1.Controls.Add(this.textBox_Price);
-            this.panel1.Controls.Add(this.textBox_Quantity);
+            this.panel1.Controls.Add(this.textBox_age);
+            this.panel1.Controls.Add(this.textBox_phone);
             this.panel1.Controls.Add(this.textBox_Id);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -277,12 +279,12 @@
             this.panel1.Size = new System.Drawing.Size(919, 603);
             this.panel1.TabIndex = 23;
             // 
-            // textBox1
+            // textBox_pass
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 252);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 26);
-            this.textBox1.TabIndex = 21;
+            this.textBox_pass.Location = new System.Drawing.Point(177, 252);
+            this.textBox_pass.Name = "textBox_pass";
+            this.textBox_pass.Size = new System.Drawing.Size(199, 26);
+            this.textBox_pass.TabIndex = 21;
             // 
             // label5
             // 
@@ -308,6 +310,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SellerForm";
             this.Text = "SellerForm";
+            this.Load += new System.EventHandler(this.SellerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -327,8 +330,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox_Name;
-        private System.Windows.Forms.TextBox textBox_Price;
-        private System.Windows.Forms.TextBox textBox_Quantity;
+        private System.Windows.Forms.TextBox textBox_age;
+        private System.Windows.Forms.TextBox textBox_phone;
         private System.Windows.Forms.TextBox textBox_Id;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -337,7 +340,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button_product;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_pass;
         private System.Windows.Forms.Label label5;
     }
 }
