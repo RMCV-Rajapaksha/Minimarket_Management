@@ -33,8 +33,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox_Search = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox_Category = new System.Windows.Forms.ComboBox();
             this.textBox_Name = new System.Windows.Forms.TextBox();
@@ -46,10 +44,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Logout_button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.Logout_button = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).BeginInit();
             this.SuspendLayout();
@@ -128,30 +128,6 @@
             this.label6.Size = new System.Drawing.Size(426, 41);
             this.label6.TabIndex = 16;
             this.label6.Text = "MANAGE PRODUCTS ";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(283, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 42);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(161, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 42);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -264,6 +240,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // Logout_button
+            // 
+            this.Logout_button.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Logout_button.Location = new System.Drawing.Point(10, 540);
+            this.Logout_button.Name = "Logout_button";
+            this.Logout_button.Size = new System.Drawing.Size(142, 42);
+            this.Logout_button.TabIndex = 22;
+            this.Logout_button.Text = "Logout";
+            this.Logout_button.UseVisualStyleBackColor = true;
+            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
+            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,6 +262,7 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "Seller";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -298,17 +287,29 @@
             this.button7.Text = "Selling";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // Logout_button
+            // button2
             // 
-            this.Logout_button.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Logout_button.Location = new System.Drawing.Point(10, 540);
-            this.Logout_button.Name = "Logout_button";
-            this.Logout_button.Size = new System.Drawing.Size(142, 42);
-            this.Logout_button.TabIndex = 22;
-            this.Logout_button.Text = "Logout";
-            this.Logout_button.UseVisualStyleBackColor = true;
-            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
+            this.button2.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.Location = new System.Drawing.Point(161, 322);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 42);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.Location = new System.Drawing.Point(283, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 42);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ProductForm
             // 
@@ -343,16 +344,16 @@
         private System.Windows.Forms.TextBox textBox_Quantity;
         private System.Windows.Forms.TextBox textBox_Id;
         private System.Windows.Forms.ComboBox comboBox_Category;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox_Search;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView_product;
+        private System.Windows.Forms.Button Logout_button;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView_product;
-        private System.Windows.Forms.Button Logout_button;
     }
 }

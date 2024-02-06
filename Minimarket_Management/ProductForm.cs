@@ -116,7 +116,7 @@ namespace Minimarket_Management
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Product SET ProdName='" + textBox_Name.Text + "',ProdPrice='" + textBox_Price.Text + "', ProdQty='" + textBox_Quantity.Text + "', ProdCat='" + comboBox_Category.Text + "' WHERE ProdId=" + textBox_Id + " ";
+                    string updateQuery = "UPDATE Product SET ProdName='" + textBox_Name.Text + "',ProdPrice='" + textBox_Price.Text + "', ProdQty='" + textBox_Quantity.Text + "', ProdCat='" + comboBox_Category.Text + "' WHERE ProdId=" + textBox_Id.Text + " ";
                     SqlCommand cmd = new SqlCommand(updateQuery, bdCon.GetCon());
                     bdCon.openCon();
                     cmd.ExecuteNonQuery();
@@ -178,6 +178,13 @@ namespace Minimarket_Management
         {
             Login  login = new Login();
             login.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SellerForm seller = new SellerForm();
+            seller.Show();
             this.Hide();
         }
     }

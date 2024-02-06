@@ -33,7 +33,7 @@ namespace Minimarket_Management
 
         private void getTable()
         {
-            string selectQuery = "SELECT * FROM Category";
+            string selectQuery = "SELECT * FROM Seller";
             SqlCommand command = new SqlCommand(selectQuery, dbCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -88,25 +88,78 @@ namespace Minimarket_Management
 
             try
             {
-                if (textBox_Id.Text == "")
+                if (textBox_Id.Text == "" || textBox_Name.Text == "" || textBox_age.Text == "" || textBox_phone.Text == "")
                 {
-                    MessageBox.Show("Missing Information");
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Seller SET SellerName='" + textBox_Name.Text + "',SellerAge='" + textBox_age.Text + "',SellerPhone='" + textBox_phone.Text + "'SellerPass='" + textBox_pass.Text + "' WHERE SellerId=" + textBox_Id.Text;
-                    SqlCommand cmd = new SqlCommand(updateQuery, dbCon.GetCon());
-                    dbCon.openCon();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Category Update Successfully");
-                    dbCon.closeCon();
-                    getTable();
+                    string updateQuery = "UPDATE Seller SET SellerName=@Name, SellerAge=@Age, SellerPhone=@Phone, SellerPass=@Pass WHERE SellerId=@Id";
+
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, dbCon.GetCon()))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", textBox_Name.Text);
+                        cmd.Parameters.AddWithValue("@Age", textBox_age.Text);
+                        cmd.Parameters.AddWithValue("@Phone", textBox_phone.Text);
+                        cmd.Parameters.AddWithValue("@Pass", textBox_pass.Text);
+                        cmd.Parameters.AddWithValue("@Id", textBox_Id.Text);
+
+                        dbCon.openCon();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Seller Update Successfully");
+                        dbCon.closeCon();
+                        getTable();
+                        clear();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                if (textBox_Id.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+
+                    string deleteQuery = "DELETE FROM Seller WHERE SellerId='" + textBox_Id.Text + "'";
+                    SqlCommand cmd = new SqlCommand(deleteQuery, dbCon.GetCon());
+                    dbCon.openCon();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Seller Deleted Successfully", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dbCon.closeCon();
+                    getTable();
+                    clear();
+                }
+            }
+            catch
+            (Exception ex)
+            { MessageBox.Show(ex.Message); }
+        }
+
+        private void button_product_Click(object sender, EventArgs e)
+        {
+            CategoryForm categoryForm = new CategoryForm();
+            categoryForm.ShowDialog();
+            this.Hide();
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

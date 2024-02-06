@@ -50,6 +50,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_pass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +136,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -253,10 +256,12 @@
             this.button_product.TabIndex = 24;
             this.button_product.Text = "Product";
             this.button_product.UseVisualStyleBackColor = true;
+            this.button_product.Click += new System.EventHandler(this.button_product_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textBox_pass);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dataGridView_product);
@@ -297,17 +302,37 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Password";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(862, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 41);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // SellerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 590);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Logout_button);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button_product);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SellerForm";
             this.Text = "SellerForm";
             this.Load += new System.EventHandler(this.SellerForm_Load);
@@ -315,6 +340,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -342,5 +368,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox_pass;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

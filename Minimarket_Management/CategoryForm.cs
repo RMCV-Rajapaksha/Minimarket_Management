@@ -21,6 +21,10 @@ namespace Minimarket_Management
             getTable();
         }
 
+        private void getCategory()
+        {
+
+        }
         private void getTable()
         {
             string selectQuery = "SELECT * FROM Category"; 
@@ -86,7 +90,7 @@ namespace Minimarket_Management
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }                                                                                                                                              
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -113,6 +117,18 @@ namespace Minimarket_Management
             ProductForm product = new ProductForm();
             product.Show();
             this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SellerForm sellerForm = new SellerForm();
+            sellerForm.Show();
+            this.Hide();
+        }
+
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
