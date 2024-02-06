@@ -84,6 +84,7 @@ namespace Minimarket_Management
         {
             getTable();
             getCategory();
+            getSellTable();
         }
 
         private void dataGridView2_Click(object sender, EventArgs e)

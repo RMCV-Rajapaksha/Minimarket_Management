@@ -109,6 +109,9 @@
             this.comboBox_Search.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Italic);
             this.comboBox_Search.ForeColor = System.Drawing.SystemColors.MenuText;
             this.comboBox_Search.FormattingEnabled = true;
+            this.comboBox_Search.Items.AddRange(new object[] {
+            "ADMIN",
+            "SELLER"});
             this.comboBox_Search.Location = new System.Drawing.Point(38, 366);
             this.comboBox_Search.Name = "comboBox_Search";
             this.comboBox_Search.Size = new System.Drawing.Size(199, 29);
