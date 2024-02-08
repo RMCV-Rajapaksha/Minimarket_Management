@@ -33,6 +33,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox_Search = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox_Category = new System.Windows.Forms.ComboBox();
             this.textBox_Name = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).BeginInit();
             this.SuspendLayout();
@@ -128,6 +128,30 @@
             this.label6.Size = new System.Drawing.Size(426, 41);
             this.label6.TabIndex = 16;
             this.label6.Text = "MANAGE PRODUCTS ";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.Location = new System.Drawing.Point(283, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 42);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.Location = new System.Drawing.Point(161, 322);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 42);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -286,30 +310,7 @@
             this.button7.TabIndex = 21;
             this.button7.Text = "Selling";
             this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(161, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 42);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(283, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 42);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // ProductForm
             // 

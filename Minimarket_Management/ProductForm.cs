@@ -187,5 +187,12 @@ namespace Minimarket_Management
             seller.Show();
             this.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SellingForm sell = new SellingForm();
+            sell.Show();
+            this.Hide();
+        }
     }
 }
