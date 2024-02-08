@@ -78,6 +78,7 @@
             this.button6.TabIndex = 25;
             this.button6.Text = "Category";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dataGridView_product
             // 

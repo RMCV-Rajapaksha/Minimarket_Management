@@ -168,5 +168,12 @@ namespace Minimarket_Management
             login.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CategoryForm category = new CategoryForm();
+            category.Show();
+            this.Hide();
+        }
     }
 }
