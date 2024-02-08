@@ -37,9 +37,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox_username = new System.Windows.Forms.TextBox();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.comboBox_role = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,42 +147,42 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "PASSWORD";
             // 
-            // textBox1
+            // textBox_username
             // 
-            this.textBox1.Location = new System.Drawing.Point(667, 236);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 26);
-            this.textBox1.TabIndex = 6;
+            this.textBox_username.Location = new System.Drawing.Point(667, 236);
+            this.textBox_username.Name = "textBox_username";
+            this.textBox_username.Size = new System.Drawing.Size(279, 26);
+            this.textBox_username.TabIndex = 6;
             // 
-            // textBox2
+            // textBox_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(667, 299);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 26);
-            this.textBox2.TabIndex = 7;
+            this.textBox_password.Location = new System.Drawing.Point(667, 299);
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(279, 26);
+            this.textBox_password.TabIndex = 7;
             // 
-            // comboBox1
+            // comboBox_role
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_role.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.comboBox_role.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.comboBox_role.FormattingEnabled = true;
+            this.comboBox_role.Items.AddRange(new object[] {
             "ADMIN",
             "SELLER"});
-            this.comboBox1.Location = new System.Drawing.Point(667, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(278, 35);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "Select Role";
+            this.comboBox_role.Location = new System.Drawing.Point(667, 169);
+            this.comboBox_role.Name = "comboBox_role";
+            this.comboBox_role.Size = new System.Drawing.Size(278, 35);
+            this.comboBox_role.TabIndex = 8;
+            this.comboBox_role.Text = "Select Role";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 625);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox_role);
+            this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
@@ -192,6 +192,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -210,9 +211,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_username;
+        private System.Windows.Forms.ComboBox comboBox_role;
+        private System.Windows.Forms.TextBox textBox_password;
     }
 }
 

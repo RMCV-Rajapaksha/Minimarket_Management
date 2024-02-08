@@ -8,16 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGVPrinterHelper;
 
 namespace Minimarket_Management
 {
     public partial class SellingForm : Form
     {
         DBConnect bBCon = new DBConnect();
+        DGVPrinter printer = new DGVPrinter();
         public SellingForm()
         {
             InitializeComponent();
             getCategory();
+            getSellTable();
         }
 
         private void getTable()
@@ -38,10 +41,14 @@ namespace Minimarket_Management
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dataGridView2.DataSource = dt;
+
         }
+
+
 
         private void getCategory()
         {
+           
             string selectQuery = "SELECT * FROM Category";
             SqlCommand command = new SqlCommand(selectQuery, bBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -51,6 +58,10 @@ namespace Minimarket_Management
             comboBox_Search.ValueMember = "CatName";
            
         }
+
+        
+
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -82,6 +93,7 @@ namespace Minimarket_Management
 
         private void SellingForm_Load(object sender, EventArgs e)
         {
+            label_date.Text = DateTime.Today.ToShortDateString();
             getTable();
             getCategory();
             getSellTable();
@@ -115,7 +127,7 @@ namespace Minimarket_Management
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Order Added Added Successfully");
                     bBCon.closeCon();
-                    getSellTable();
+                    getTable();
                     //clean();
 
 
@@ -136,6 +148,33 @@ namespace Minimarket_Management
         private void comboBox_Search_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            printer.Title = "Mdemy MiniMarket Sell Lists";
+            printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "foxlearn";
+            printer.FooterSpacing = 15;
+            printer.printDocument.DefaultPageSettings.Landscape = true;
+            printer.PrintDataGridView(dataGridView_sellList);
+        }
+
+        private void Logout_button_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void textBox_Name_TextChanged(object sender, EventArgs e)

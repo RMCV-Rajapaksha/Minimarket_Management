@@ -48,10 +48,10 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button_product = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox_pass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_product)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.Logout_button.TabIndex = 27;
             this.Logout_button.Text = "Logout";
             this.Logout_button.UseVisualStyleBackColor = true;
+            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
             // 
             // button6
             // 
@@ -284,6 +285,18 @@
             this.panel1.Size = new System.Drawing.Size(919, 603);
             this.panel1.TabIndex = 23;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(862, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 41);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // textBox_pass
             // 
             this.textBox_pass.Location = new System.Drawing.Point(177, 252);
@@ -308,18 +321,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 28;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(862, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 41);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "X";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // SellerForm
             // 

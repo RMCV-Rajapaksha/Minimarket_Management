@@ -161,5 +161,12 @@ namespace Minimarket_Management
         {
             this.Close();
         }
+
+        private void Logout_button_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

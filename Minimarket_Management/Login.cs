@@ -44,9 +44,21 @@ namespace Minimarket_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CategoryForm Myroom = new CategoryForm();
-            Myroom.Show();
-            this.Hide();
+           if(comboBox_role.SelectedIndex.ToString()=="admin")
+            {
+                string selectQuery = "SELECT * FROM Seller WHERE SellerName='" + textBox_username.Text + "' AND SellerPass='" + textBox_password.Text + "'";
+                DataTable dt = new DataTable(); 
+                sqlda
+            }
+           else
+            {
+
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
